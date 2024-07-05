@@ -1,0 +1,43 @@
+.card {
+    background-color: grey;
+    max-width: 30%;
+    margin: 5rem auto;
+}
+
+.form-control {
+    padding: 1rem 1rem 1.3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.input-control {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.label {
+    color: black;
+    font-size: large;
+}
+
+.input {
+    outline: none;
+    border: none;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.3rem;
+}
+
+.actions {
+    margin-top: 0.3rem;
+}
+
+.card-error {
+    background: rgb(252,0,0);
+    background: linear-gradient(90deg, rgba(252,0,0,1) 0%, rgba(228,130,130,1) 100%);
+}
+
+.error {
+    color: #fff;
+}
