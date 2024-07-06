@@ -23,6 +23,12 @@ const Page = () => {
         const confirmPasswordValue = event.target['confirm-password'].value;
         if ( emailValue === '' || passwordValue === '' || confirmPasswordValue === '') {
             setHasError('Fields must not be empty!');
+            setIsLoading(false);
+            return;
+        }
+        if ( passwordValue !== confirmPasswordValue ) {
+            setHasError('Passwords must be match!');
+            setIsLoading(false);
             return;
         }
         const response = await fetch(REGISTER_URL, {
