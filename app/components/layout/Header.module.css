@@ -8,6 +8,7 @@
 
 .a {
     font-size: larger;
+    cursor: pointer;
 }
 
 .active-a {

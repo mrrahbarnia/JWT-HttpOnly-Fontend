@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useAuth } from '@/components/auth';
+import { useAuth } from '@/components/authProvider';
 
 import classes from './page.module.css';
 import Card from "@/components/ui/Card";
@@ -38,10 +38,8 @@ const Page = () => {
                 password: passwordValue
             })
         })
-
         if (response.status === 200) {
             auth.login();
-
         } else if (response.status === 400) {
             setHasError('Not found active user!')
             setIsLoading(false);

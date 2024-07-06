@@ -2,7 +2,7 @@ import { cookies } from "next/headers";
 
 const AUTH_COOKIE_NAME = 'auth-token';
 const REFRESH_TOKEN_COOKIE_NAME = 'auth-refresh-token';
-const TOKEN_MAX_AGE = process.env.TOKEN_MAX_AGE ? Number(process.env.TOKEN_MAX_AGE) : 3600;
+const TOKEN_MAX_AGE = process.env.TOKEN_MAX_AGE ? Number(process.env.TOKEN_MAX_AGE) : 360000000;
 
 export function getToken () {
     const token = cookies().get(AUTH_COOKIE_NAME);
@@ -34,4 +34,9 @@ export function setRefreshToken(refreshToken) {
         secure: process.env.NODE_ENV !== 'development',
         maxAge: TOKEN_MAX_AGE
     });
+};
+
+export function deleteTokens () {
+    cookies().delete(AUTH_COOKIE_NAME);
+    cookies().delete(REFRESH_TOKEN_COOKIE_NAME);
 };
