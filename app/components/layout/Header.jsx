@@ -22,6 +22,7 @@ const Header = () => {
         <header className={classes.header}>
             <Link className={path === '/' ? classes['active-a'] : classes.a } href='/'>Home</Link>
             {auth.isAuthenticated && <a style={{cursor: 'pointer'}} onClick={LogoutHandler}>Logout</a>}
+            {auth.isAuthenticated && <Link className={path === '/change-password' ? classes['active-a'] : classes.a } href='/change-password'>Change password</Link>}
             {!auth.isAuthenticated && <Link className={path === '/login' ? classes['active-a'] : classes.a } href='/login'>Login</Link>}
             {!auth.isAuthenticated && <Link className={path === '/register' ? classes['active-a'] : classes.a } href='/register'>Register</Link>}
             {auth.isAuthenticated && <Link className={path === '/transactions' ? classes['active-a'] : classes.a } href='/transactions'>Transactions</Link>}

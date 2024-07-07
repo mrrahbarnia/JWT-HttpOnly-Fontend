@@ -26,6 +26,17 @@ export default class ApiProxy {
         return {data, status};
     }
 
+    static async post(endpoint, object, requiredAuth) {
+        const jsonObject = JSON.stringify(object);
+        const headers = await ApiProxy.getHeaders(requiredAuth);
+        const requestOptions = {
+            method: 'POST',
+            headers,
+            body: jsonObject
+        };
+        return await ApiProxy.fetchRequest(endpoint, requestOptions);
+    };
+
     static async get(endpoint, requiredAuth) {
         const headers = await ApiProxy.getHeaders(requiredAuth);
         const requestOptions = {
